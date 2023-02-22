@@ -30,6 +30,7 @@ void loop() {
   if (sonar.ping_cm() > 40)  {
     Serial.print("OFF");
     //Controls Skeleton
+    //ArduinoFFT could automate this
     myservo.write(120);
     delay(300);
     myservo.write(30);
