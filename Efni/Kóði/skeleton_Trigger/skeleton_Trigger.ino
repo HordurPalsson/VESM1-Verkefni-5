@@ -1,9 +1,18 @@
 // Include NewPing Library
 #include "NewPing.h"
+#include "Servo.h"
+
+// Servo Object
+Servo myservo;
 
 // Hook up HC-SR04 with Trig to Arduino Pin 9, Echo to Arduino pin 10
 #define TRIGGER_PIN 9
 #define ECHO_PIN 10
+#define servoPin 11
+
+// Servo position
+int angle = 0;
+
 
 // Maximum distance we want to ping for (in centimeters).
 #define MAX_DISTANCE 400
@@ -13,15 +22,22 @@ NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
 
 void setup() {
 	Serial.begin(9600);
+  myservo.attach(servoPin);
 }
 
 void loop() {
 	// Serial.print(sonar.ping_cm());
 	// Serial.println(" cm");
   if (sonar.ping_cm() > 100)  {
-    Serial.print("OFF = ");
+    Serial.print("OFF");
+    myservo.write(90);
+    delay(300);
+    myservo.write(0);
+    delay(300);
   } else {
-    Serial.print("ON = ");
+    Serial.print("ON");
+        myservo.write(0);
+
   }
   delay(625);
 }
