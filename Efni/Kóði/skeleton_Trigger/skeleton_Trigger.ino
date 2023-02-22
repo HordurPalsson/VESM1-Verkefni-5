@@ -21,13 +21,13 @@ int angle = 0;
 NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
 
 void setup() {
-	Serial.begin(9600);
+  Serial.begin(9600);
   // Kveikir servoinum
   myservo.attach(servoPin);
 }
 
 void loop() {
-  if (sonar.ping_cm() > 40)  {
+  if (sonar.ping_cm() > 20) {
     Serial.print("OFF");
     //Controls Skeleton
     //ArduinoFFT could automate this
@@ -39,7 +39,7 @@ void loop() {
     delay(250);
   } else {
     Serial.print("ON");
-        myservo.write(0);
+    myservo.write(0);
   }
   delay(625);
 }
