@@ -26,14 +26,17 @@ void setup() {
 }
 
 void loop() {
-	// Serial.print(sonar.ping_cm());
+	Serial.print(sonar.ping_cm());
 	// Serial.println(" cm");
   if (sonar.ping_cm() > 100)  {
     Serial.print("OFF");
-    myservo.write(90);
+    //Controls Skeleton
+    myservo.write(120);
+    delay(600);
+    myservo.write(30);
     delay(300);
     myservo.write(0);
-    delay(300);
+    delay(500);
   } else {
     Serial.print("ON");
         myservo.write(0);
