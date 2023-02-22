@@ -22,27 +22,23 @@ NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
 
 void setup() {
 	Serial.begin(9600);
+  // Kveikir servoinum
   myservo.attach(servoPin);
 }
 
 void loop() {
-	Serial.print(sonar.ping_cm());
-	// Serial.println(" cm");
-  if (sonar.ping_cm() > 20)  {
+  if (sonar.ping_cm() > 40)  {
     Serial.print("OFF");
     //Controls Skeleton
     myservo.write(120);
-    delay(600);
-    myservo.write(30);
     delay(300);
+    myservo.write(30);
+    delay(150);
     myservo.write(0);
-    delay(500);
+    delay(250);
   } else {
     Serial.print("ON");
-        myservo.write(30);
-        delay(100);
         myservo.write(0);
-        delay(100);
   }
   delay(625);
 }
