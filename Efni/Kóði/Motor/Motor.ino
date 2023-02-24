@@ -1,5 +1,6 @@
+#include <tdelay.h>
 #include <Servo.h>
-#include "tdelay.h"
+
 
 Servo motor; // bý til tilvik af Servo klasanum
 int motor_pinni = 9; // pinninn sem ég nota til að stjórna mótornum
