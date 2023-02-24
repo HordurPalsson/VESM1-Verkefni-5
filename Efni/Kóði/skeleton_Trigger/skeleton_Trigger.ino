@@ -46,6 +46,7 @@ void loop() {
     motor_stefnu_teljari = (motor_stefnu_teljari + 1) % motor_stefnu_fjoldi;
     // veljum svo rétta stefnu úr listanum
     motor.write(motor_stefnur[motor_stefnu_teljari]);
+    delay(300);
   }
 
   
