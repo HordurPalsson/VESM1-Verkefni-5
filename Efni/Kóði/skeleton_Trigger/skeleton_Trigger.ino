@@ -20,8 +20,8 @@ bool movement = true;
 int angle = 0;
 
 // Motor position
-int motor_stefnur[] = { 0, 90, 180, 90 };
-int motor_stefnu_fjoldi = 4;   // breytan geymir hversu margar stefnur eru í listanum
+int motor_stefnur[] = { 45, 90, 135}; // Snúningur á servo
+int motor_stefnu_fjoldi = 3;   // breytan geymir hversu margar stefnur eru í listanum
 int motor_stefnu_teljari = 0;  // breytan heldur utan um í hvaða stefnu mótorinn á að benda
 
 // Maximum distance we want to ping for (in centimeters).
