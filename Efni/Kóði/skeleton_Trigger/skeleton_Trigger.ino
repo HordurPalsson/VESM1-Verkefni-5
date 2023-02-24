@@ -10,7 +10,7 @@ int stefna = 0;
 bool movement = true;
 
 // Hook up HC-SR04 with Trig to Arduino Pin 9, Echo to Arduino pin 10
-// Segir til um hvada pinnar gera hvad
+// Segir til um hvaða pinnar gera hvad
 #define TRIGGER_PIN 9
 #define ECHO_PIN 10
 #define servoPin 11
@@ -18,11 +18,6 @@ bool movement = true;
 
 // Servo position
 int angle = 0;
-
-// Motor position
-int motor_stefnur[] = { 45, 90, 135 };  // Snúningur á servo
-int motor_stefnu_fjoldi = 3;            // breytan geymir hversu margar stefnur eru í listanum
-int motor_stefnu_teljari = 0;           // breytan heldur utan um í hvaða stefnu mótorinn á að benda
 
 // Maximum distance we want to ping for (in centimeters).
 #define MAX_DISTANCE 400
@@ -35,35 +30,35 @@ void setup() {
   // Kveikir servoinum
   myservo.attach(servoPin);
   // motorinn
-  motor.attach(motorPin);                            // segi servo tilvikinu hvaða pinna á að nota
-  motor.write(motor_stefnur[motor_stefnu_teljari]);  // í þessu tilfelli á mótorinn að byrja í 0°
+  motor.attach(motorPin);  // segi servo tilvikinu hvaða pinna á að nota
 }
 
 void loop() {
-  if (sonar.ping() > 10) {
-    // uppfæra stefnu_teljara breytuna, modulus notað til að talan verði
-    // aldrei hærri en fjöldi stefnanna sem eru í listanum
-    motor_stefnu_teljari = (motor_stefnu_teljari + 1) % motor_stefnu_fjoldi;
-    // veljum svo rétta stefnu úr listanum
-    motor.write(motor_stefnur[motor_stefnu_teljari]);
-    delay(300);
-  }
+
+  myservo.write(45);  // rotate the motor counterclockwise
+
+  delay(5000);  // keep rotating for 5 seconds (5000 milliseconds)
+
+  myservo.write(90);  // stop the motor
+
+  delay(5000);  // stay stopped
+
+  myservo.write(135);  // rotate the motor clockwise
+
+  delay(5000);  // keep rotating :D
 
 
-  if (sonar.ping_cm() > 10) {
 
 
-    if (sonar.ping_cm() > 20) {
-      Serial.print("OFF");
-      //Controls Skeleton
-      //ArduinoFFT potentionally could automate this
-      myservo.write(120);
-      myservo.write(30);
-      myservo.write(0);
-    } else {
-      Serial.print("ON");
-      myservo.write(0);
-    }
-    delay(625);
+  if (sonar.ping_cm() < 20) {
+    Serial.print("OFF");
+    //Controls Skeleton
+    //ArduinoFFT potentionally could automate this
+    myservo.write(120);
+    myservo.write(30);
+    myservo.write(0);
+  } else {
+    Serial.print("ON");
+    myservo.write(0);
   }
 }
