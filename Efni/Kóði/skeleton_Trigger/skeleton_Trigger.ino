@@ -20,9 +20,9 @@ bool movement = true;
 int angle = 0;
 
 // Motor position
-int motor_stefnur[] = { 45, 90, 135}; // Snúningur á servo
-int motor_stefnu_fjoldi = 3;   // breytan geymir hversu margar stefnur eru í listanum
-int motor_stefnu_teljari = 0;  // breytan heldur utan um í hvaða stefnu mótorinn á að benda
+int motor_stefnur[] = { 45, 90, 135 };  // Snúningur á servo
+int motor_stefnu_fjoldi = 3;            // breytan geymir hversu margar stefnur eru í listanum
+int motor_stefnu_teljari = 0;           // breytan heldur utan um í hvaða stefnu mótorinn á að benda
 
 // Maximum distance we want to ping for (in centimeters).
 #define MAX_DISTANCE 400
@@ -35,12 +35,12 @@ void setup() {
   // Kveikir servoinum
   myservo.attach(servoPin);
   // motorinn
-  motor.attach(motorPin); // segi servo tilvikinu hvaða pinna á að nota
-  motor.write(motor_stefnur[motor_stefnu_teljari]); // í þessu tilfelli á mótorinn að byrja í 0°
+  motor.attach(motorPin);                            // segi servo tilvikinu hvaða pinna á að nota
+  motor.write(motor_stefnur[motor_stefnu_teljari]);  // í þessu tilfelli á mótorinn að byrja í 0°
 }
 
 void loop() {
-  if(sonar.ping() > 10) {
+  if (sonar.ping() > 10) {
     // uppfæra stefnu_teljara breytuna, modulus notað til að talan verði
     // aldrei hærri en fjöldi stefnanna sem eru í listanum
     motor_stefnu_teljari = (motor_stefnu_teljari + 1) % motor_stefnu_fjoldi;
@@ -49,7 +49,7 @@ void loop() {
     delay(300);
   }
 
-  
+
   if (sonar.ping_cm() > 10) {
 
 
