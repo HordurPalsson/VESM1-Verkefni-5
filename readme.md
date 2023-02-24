@@ -1,8 +1,13 @@
 # VESM1 Verkefni 5 
 
-## Virkni á hauskúbuni
+## Virkni og notkun
+[Hauskúba](https://drive.google.com/file/d/1RvkSpu6SGQ47MU8FCnfXZZsG8xI1Pf_O/view?usp=sharing)
+
+## Lýsing, mælingar
+
+## Ljósmyndir
  
-## Heimildir
+## Höfundar og heimildir
 
 [Upplýsingar um Ultrasonic Sensor](https://lastminuteengineers.com/arduino-sr04-ultrasonic-sensor-tutorial/)
 

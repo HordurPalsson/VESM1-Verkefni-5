@@ -1,7 +1,6 @@
 // Include NewPing Library
 #include "NewPing.h"
 #include "Servo.h"
-#include "tdelay.h"
 
 // Servo Object
 Servo myservo;
@@ -15,9 +14,16 @@ bool movement = true;
 #define TRIGGER_PIN 9
 #define ECHO_PIN 10
 #define servoPin 11
+#define motorPin 12
 
 // Servo position
 int angle = 0;
+
+// Motor position
+int motor_stefnur[] = { 0, 90, 180, 90 };
+int motor_stefnu_fjoldi = 4;   // breytan geymir hversu margar stefnur eru í listanum
+int motor_stefnu_teljari = 0;  // breytan heldur utan um í hvaða stefnu mótorinn á að benda
+
 
 
 // Maximum distance we want to ping for (in centimeters).
@@ -31,21 +37,22 @@ void setup() {
   // Kveikir servoinum
   myservo.attach(servoPin);
   // motorinn
-  motor.attach(motorPin);
-  motor.write(stefna);
+  motor.attach(motorPin); // segi servo tilvikinu hvaða pinna á að nota
+  motor.write(motor_stefnur[motor_stefnu_teljari]); // í þessu tilfelli á mótorinn að byrja í 0°
 }
 
 void loop() {
-    if (sonar.ping_cm() > 10) {
-      if (movement == true) {
-        stefna++;  // jafngildir stefna += 1 og stefna = stefna + 1
-      } else {     // mótorinn er að hreyfast til hægri
-        stefna--;  // jafngildir stefna -= 1 og stefna = stefna - 1
-      }
-      if (stefna == 0 || stefna == 180) {  // ef mótirnn er kominn út á enda, víxla áttunum
-        movement = !movement;
-      }
-      motor.write(stefna);
+  if(sonar.ping() > 0) {
+    // uppfæra stefnu_teljara breytuna, modulus notað til að talan verði
+    // aldrei hærri en fjöldi stefnanna sem eru í listanum
+    motor_stefnu_teljari = (motor_stefnu_teljari + 1) % motor_stefnu_fjoldi;
+    // veljum svo rétta stefnu úr listanum
+    motor.write(motor_stefnur[motor_stefnu_teljari]);
+  }
+
+  
+  if (sonar.ping_cm() > 10) {
+
 
     if (sonar.ping_cm() > 20) {
       Serial.print("OFF");
