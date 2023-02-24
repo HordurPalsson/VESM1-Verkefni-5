@@ -3,10 +3,12 @@
 ## Virkni og notkun
 
 [![Foo](./Efni/Myndir/Skull%20Virkni_MYND.jpg)](https://drive.google.com/file/d/1RvkSpu6SGQ47MU8FCnfXZZsG8xI1Pf_O/view?usp=sharing)
+Myndband af virkni
 
 ## Ljósmyndir
  
 ![Mynd af grindinni](./Efni/Myndir/Grind.jpg)
+Grindinn
 
 ## Lýsing, efni, mælingar, höfundar og heimildir
 
@@ -16,6 +18,6 @@
 
 [Servo motor](https://lastminuteengineers.com/servo-motor-arduino-tutorial/)
 
-[Timaverkefni 4](https://github.com/VESM1VS/AFANGI/blob/main/Verkefni/Verkefni4.md)
+[Tímaverkefni 4](https://github.com/VESM1VS/AFANGI/blob/main/Verkefni/Verkefni4.md)
 
 [Arduino gögn](https://reference.arduino.cc/reference/en/)
