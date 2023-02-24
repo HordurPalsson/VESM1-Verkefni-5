@@ -16,4 +16,6 @@
 
 [Servo motor](https://lastminuteengineers.com/servo-motor-arduino-tutorial/)
 
+[Timaverkefni 4](https://github.com/VESM1VS/AFANGI/blob/main/Verkefni/Verkefni4.md)
+
 [Arduino gögn](https://reference.arduino.cc/reference/en/)
