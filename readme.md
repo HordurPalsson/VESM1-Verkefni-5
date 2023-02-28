@@ -20,7 +20,12 @@ Grindinn
 | 2 | Hátalari |
 | 1 | DC motor|
 | 1 | Micro servo|
-|||
+| 1 | DFPlayer mp3|
+| 10 | PVC pípur|
+| 1 | Breadboard|
+| 1 | L298N motor controller|
+| | |
+| | | 
 
 
 
