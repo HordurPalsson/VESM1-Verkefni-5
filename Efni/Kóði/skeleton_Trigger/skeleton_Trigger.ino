@@ -1,8 +1,7 @@
-// Libraries
+// Include NewPing Library
 #include "NewPing.h"
 
 // Hook up HC-SR04 with Trig to Arduino Pin 9, Echo to Arduino pin 10
-// Segir til um hvaða pinnar gera hvad
 #define TRIGGER_PIN 9
 #define ECHO_PIN 10
 
@@ -13,13 +12,16 @@
 NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
 
 void setup() {
-  Serial.begin(9600);
+	Serial.begin(9600);
 }
 
 void loop() {
-  if (sonar.ping_cm() < 20) {
-    Serial.print("OFF");
+	// Serial.print(sonar.ping_cm());
+	// Serial.println(" cm");
+  if (sonar.ping_cm() > 100)  {
+    Serial.print("OFF = ");
   } else {
-    Serial.print("ON");
+    Serial.print("ON = ");
   }
+  delay(625);
 }
