@@ -12,6 +12,18 @@ Grindinn
 
 ## Lýsing, efni, mælingar, höfundar og heimildir
 
+| FJÖLDI | EFNI|
+|------|------|
+| 2 | Rautt led|
+| 1 | HC-SR04 Ultrasonic (Fjarlægðaskynjari)|
+| 1 | Arduino Uno|
+| 2 | Hátalari |
+| 1 | DC motor|
+| 1 | Micro servo|
+|||
+
+
+
 [Upplýsingar um Ultrasonic Sensor](https://lastminuteengineers.com/arduino-sr04-ultrasonic-sensor-tutorial/)
 
 [Tónlist](https://github.com/HordurPalsson/VESM1-Verkefni-5/blob/main/Tonlist)
