@@ -4,8 +4,9 @@
 #include <Servo.h>
 
 // Objects
-#define TRIGGER_PIN 9
-#define ECHO_PIN 10
+// Tölur eru hvaða pinnar fara á arduinoinn
+#define TRIGGER_PIN 9 // Fyrir skynjarann
+#define ECHO_PIN 10 // Fyrir skynjarann
 
 
 // Hversu nálagt þarf að vera til að
@@ -14,8 +15,6 @@ int distance = 20;
 
 // Maximum distance we want to ping for (in centimeters).
 #define MAX_DISTANCE 400
-
-
 
 void setup() {
     Serial.begin(9600);

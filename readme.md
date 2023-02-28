@@ -16,7 +16,7 @@ Grindinn
 |------|------|
 | 2 | Rautt led|
 | 1 | HC-SR04 Ultrasonic (Fjarlægðaskynjari)|
-| 1 | Arduino Uno|
+| 1 | Arduino |
 | 2 | Hátalari |
 | 1 | DC motor|
 | 1 | Micro servo|
