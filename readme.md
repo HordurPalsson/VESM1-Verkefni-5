@@ -15,6 +15,8 @@ Grindinn
 
 ## Lýsing, efni, mælingar, höfundar og heimildir
 
+### Efni
+---------
 | FJÖLDI | EFNI|
 |------|------|
 | 2 | Rautt led|
@@ -31,7 +33,8 @@ Grindinn
 | | | 
 
 
-
+### Heimildir
+--------
 [Upplýsingar um Ultrasonic Sensor](https://lastminuteengineers.com/arduino-sr04-ultrasonic-sensor-tutorial/)
 
 [Tónlist](https://github.com/HordurPalsson/VESM1-Verkefni-5/blob/main/Tonlist)
