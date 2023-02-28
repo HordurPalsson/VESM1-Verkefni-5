@@ -3,7 +3,10 @@
 ## Virkni og notkun
 
 [![Foo](./Efni/Myndir/Skull%20Virkni_MYND.jpg)](https://drive.google.com/file/d/1RvkSpu6SGQ47MU8FCnfXZZsG8xI1Pf_O/view?usp=sharing)
-Myndband af virkni
+Myndband af hreyfingu á höfuðkúpu
+
+[![Foo](./Efni/)]()
+Myndband af hreyfing á búk
 
 ## Ljósmyndir
  
@@ -38,3 +41,5 @@ Grindinn
 [Tímaverkefni 4](https://github.com/VESM1VS/AFANGI/blob/main/Verkefni/Verkefni4.md)
 
 [Arduino gögn](https://reference.arduino.cc/reference/en/)
+
+[Kóðinn fyrir hreyfingu á mekatrónik](https://github.com/VESM1VS/AFANGI/blob/main/Kennsluefni/forritun_lokaverkefni.md)
