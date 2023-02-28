@@ -5,7 +5,7 @@
 [![Foo](./Efni/Myndir/Skull%20Virkni_MYND.jpg)](https://drive.google.com/file/d/1RvkSpu6SGQ47MU8FCnfXZZsG8xI1Pf_O/view?usp=sharing)
 Myndband af hreyfingu á höfuðkúpu
 
-[![Foo](./Efni/)]()
+[![Foo](./Efni/)](https://drive.google.com/file/d/1vM3KPoFO6krJMG9DLv-ZY_mnuQAaxNLZ/view?usp=drivesdk)
 Myndband af hreyfing á búk
 
 ## Ljósmyndir
