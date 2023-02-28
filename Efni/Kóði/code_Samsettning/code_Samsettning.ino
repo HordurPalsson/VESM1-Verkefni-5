@@ -1,6 +1,9 @@
 // Libraries
 #include "NewPing.h"
-#include <tdelay.h>
+#include "Arduino.h"
+#include "SoftwareSerial.h"
+#include "DFRobotDFPlayerMini.h"
+#include "tdelay.h"
 #include <Servo.h>
 
 // Objects
@@ -8,6 +11,14 @@
 // Skynjari
 #define TRIGGER_PIN 9  // Fyrir skynjarann
 #define ECHO_PIN 10    // Fyrir skynjarann
+
+// DC mótor
+const int HRADI = 5;  // Verður að vera PWM pinni
+const int STEFNA_A = 2;
+const int STEFNA_B = 4;
+void afram(int hradi);
+void bakka(int hradi);
+void stoppa();
 
 Servo motor;
 int motor_pinni = 11;
@@ -33,11 +44,13 @@ void setup() {
   Serial.begin(9600);
   motor.attach(motor_pinni);                         // segir servo tilvikinu hvaða pinna á að nota
   motor.write(motor_stefnur[motor_stefnu_teljari]);  // í þessu tilfelli á mótorinn að byrja í 0°
+  stoppa();                                          // upphafsstaðan, verður stopp þar til annað er ákveðið
 }
 
 void loop() {
-  if (sonar.ping_cm()
-  
+  if (sonar.ping_cm() < 0) {
+  }
+
   if (sonar.ping_cm() < distance) {
     if (motor_bid.timiLidinn()) {
       // uppfæra stefnu_teljara breytuna, modulus notað til að talan verði
@@ -50,4 +63,17 @@ void loop() {
     // Keyrir í staðinn ef enginn er nálagt
   } else {
   }
+}
+
+// DC mótor
+void afram(int hradi) {
+  digitalWrite(STEFNA_A, HIGH);
+  digitalWrite(STEFNA_B, LOW);
+  analogWrite(HRADI, hradi);
+}
+
+void stoppa() {
+  digitalWrite(STEFNA_A, LOW);
+  digitalWrite(STEFNA_B, LOW);
+  analogWrite(HRADI, 0);
 }
