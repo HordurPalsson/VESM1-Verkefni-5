@@ -29,7 +29,7 @@ Grindinn
 | 10 | PVC pípur|
 | 1 | Breadboard|
 | 1 | L298N motor controller|
-| | |
+| 1 | External Power Supply SPS305|
 | | | 
 
 
