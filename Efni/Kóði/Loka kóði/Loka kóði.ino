@@ -12,6 +12,7 @@ const int STEFNA_A = 2;
 const int STEFNA_B = 4;
 TDelay DC_Motorbid(1000) //Bíður í eina sek
 void afram(int hradi);
+TDelay DC_Motorbid(2000) //Bíður í eina sek
 void bakka(int hradi);
 void stoppa();
 
