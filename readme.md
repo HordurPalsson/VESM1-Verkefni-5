@@ -1,8 +1,10 @@
 # VESM1 Verkefni 5 
 
-#### Höfundar: Árni, Davíð, Hörður og Sebastían.
+### Höfundar: Árni, Davíð, Hörður og Sebastían.
 
 --------
+
+<br>
 
 ## Virkni og notkun
 
@@ -22,9 +24,10 @@ Grindinn
 --------------
 
 ### Lýsing
-
-> Zyzz Jr á að lýkjast Aziz "Zyzz" Shavershian, líkamsræktarmanninum. Zyzz Jr setur sig í frægu stellingu hanns "The Zyzz", og gefur frá sér hljóð af Zyzz að kalla aðra "Lightweight" með tónlist í bakgrunninum. Animatronicinn er klæddur poncho.
-
+<br>
+<bq>
+Zyzz Jr á að lýkjast Aziz "Zyzz" Shavershian, líkamsræktarmanninum. Zyzz Jr setur sig í frægu stellingu hanns "The Zyzz", og gefur frá sér hljóð af Aziz að kalla aðra "Lightweight" með tónlist í bakgrunninum. Animatronicinn er klæddur poncho.
+</bq>
 
 [Kóðinn](./Efni/K%C3%B3%C3%B0i/code_Samsettning/code_Samsettning.ino)
 
@@ -47,7 +50,9 @@ Grindinn
 
 
 ### Heimildir
---------
+<br>
+
+
 [Upplýsingar um Ultrasonic Sensor](https://lastminuteengineers.com/arduino-sr04-ultrasonic-sensor-tutorial/)
 
 [Tónlist](https://github.com/HordurPalsson/VESM1-Verkefni-5/blob/main/Tonlist)
