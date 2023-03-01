@@ -6,6 +6,13 @@
 #include "tdelay.h"
 #include <Servo.h>
 
+// Sensor
+const int ECHO = 7;
+const int TRIG = 6;
+int distance = 0;
+int fjarlaegd();  // fall sem sér um fjarlægðamælinguna, skilar fjarlægð í cm.
+
+
 // DC mótor
 const int HRADI = 5;  // Verður að vera PWM pinni
 const int STEFNA_A = 2;
@@ -31,6 +38,11 @@ void munnur();                      // fall útfært neðar
 TDelay motor_bid(500);              // bíða í hálfa sekúndu á milli hreyfinga
 
 void setup() {
+  // Sensor
+  Serial.begin(9600);
+  pinMode(TRIG, OUTPUT);
+  pinMode(ECHO, INPUT);
+
   // Hljóð
   mySoftwareSerial.begin(9600);
   if (!myDFPlayer.begin(mySoftwareSerial)) {
@@ -45,9 +57,22 @@ void setup() {
 }
 
 void loop() {
-  afram(150);
-  playSound();
-  munnur();
+  distance = fjarlaegd();
+
+  // fjarlægð getur ekki verið mínustala
+  if (distance < 0) {
+    distance = 0;
+  }
+
+  // ef fjarlægð í hlut er minna en 50 cm, má ekki vera neikvæð tala.
+  if (distance < 50 && distance != 0) {
+    // setja sýninguna af stað
+    afram(150);
+    playSound();
+    munnur();
+  }
+
+
 }
 
 // spilar hljóðskrá á x fresti
@@ -72,12 +97,26 @@ void stoppa() {
 }
 
 // sweep
-void munnur(){
-  if(motor_bid.timiLidinn()) {
+void munnur() {
+  if (motor_bid.timiLidinn()) {
     // uppfæra stefnu_teljara breytuna, modulus notað til að talan verði
     // aldrei hærri en fjöldi stefnanna sem eru í listanum
     motor_stefnu_teljari = (motor_stefnu_teljari + 1) % motor_stefnu_fjoldi;
     // veljum svo rétta stefnu úr listanum
     motor.write(motor_stefnur[motor_stefnu_teljari]);
   }
+}
+
+int fjarlaegd() {
+
+  // sendir út púlsa
+  digitalWrite(TRIG, LOW);
+  delayMicroseconds(2); // of stutt delay til að skipta máli
+  digitalWrite(TRIG, HIGH);
+  delayMicroseconds(10); // of stutt delay til að skipta máli
+  digitalWrite(TRIG, LOW);
+
+  // mælt hvað púlsarnir voru lengi að berast til baka
+  return (int)pulseIn(ECHO, HIGH) / 58.0; // deilt með 58 til að breyta í cm
+
 }

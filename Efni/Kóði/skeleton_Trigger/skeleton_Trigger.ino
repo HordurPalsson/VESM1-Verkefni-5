@@ -5,8 +5,8 @@
   Gnd tengist í GND.
 */
 
-const int ECHO = 2; 
-const int TRIG = 3; 
+const int ECHO = 7; 
+const int TRIG = 6; 
 int distance = 0;  
 int fjarlaegd();  // fall sem sér um fjarlægðamælinguna, skilar fjarlægð í cm. 
 
