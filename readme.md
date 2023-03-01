@@ -1,6 +1,8 @@
 # VESM1 Verkefni 5 
 
-Árni, Davíð, Hörður og Sebastían.
+#### Höfundar: Árni, Davíð, Hörður og Sebastían.
+
+--------
 
 ## Virkni og notkun
 
