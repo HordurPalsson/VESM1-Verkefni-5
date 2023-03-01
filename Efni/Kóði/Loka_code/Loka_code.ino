@@ -14,7 +14,7 @@ int fjarlaegd();  // fall sem sér um fjarlægðamælinguna, skilar fjarlægð �
 
 
 // DC mótor
-const int HRADI = 5;  // Verður að vera PWM pinni
+const int HRADI = 8;  // Verður að vera PWM pinni
 const int STEFNA_A = 2;
 const int STEFNA_B = 4;
 void afram(int hradi);
@@ -39,20 +39,20 @@ TDelay motor_bid(900);              // bíða í hálfa sekúndu á milli hreyfi
 
 // Servo 2
 Servo motor_2;
-int servoMotor_pinni = 8;
+int servoMotor_pinni = 5;
 
 // svipað og listi í python, geymir stefnurnar sem mótorinn á að fara í og í hvaða röð
-int motor_stefnur2[] = {45,125 }; 
+int motor_stefnur2[] = {45, 125 };
 int motor_stefnu_fjoldi2 = 2; // breytan geymir hversu margar stefnur eru í listanum
 int motor_stefnu_teljari2 = 0; // breytan heldur utan um í hvaða stefnu mótorinn á að benda
 
-TDelay motor_bid2(900); 
+TDelay motor_bid2(900);
 
 
 void setup() {
   motor.attach(servoMotor_pinni); // segi servo tilvikinu hvaða pinna á að nota
   motor.write(motor_stefnur2[motor_stefnu_teljari2]); // í þessu tilfelli á mótorinn að byrja í 0°
-  
+
   // Sensor
   Serial.begin(9600);
   pinMode(TRIG, OUTPUT);
@@ -64,7 +64,7 @@ void setup() {
     while (true)
       ;
   }
-  myDFPlayer.volume(10);  // Set volume value. From 0 to 30
+  myDFPlayer.volume(20);  // Set volume value. From 0 to 30
 
   // Servo
   motor.attach(motor_pinni);  // segi servo tilvikinu hvaða pinna á að nota
@@ -153,13 +153,15 @@ void mouth() {
 }
 
 void motor2() {
-  if(motor_bid2.timiLidinn()) {
-    // uppfæra stefnu_teljara breytuna, modulus notað til að talan verði
-    // aldrei hærri en fjöldi stefnanna sem eru í listanum
-    motor_stefnu_teljari2 = (motor_stefnu_teljari2 + 1) % motor_stefnu_fjoldi2;
-    // veljum svo rétta stefnu úr listanum
-    motor.write(motor_stefnur2[motor_stefnu_teljari2]);
-  }
+  delay(500);
+  motor_2.write(90);
+  delay(500);
+  motor_2.write(0);
+  delay(500);
+  motor_2.write(90);
+  delay(500);
+  motor_2.write(0);
+
 }
 
 
