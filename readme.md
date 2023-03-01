@@ -28,7 +28,7 @@ Grindinn
 
 Zyzz Jr á að lýkjast Aziz "Zyzz" Shavershian, líkamsræktarmanninum. Zyzz Jr setur sig í frægu stellingu hanns "The Zyzz", og gefur frá sér hljóð af Aziz að kalla aðra "Lightweight" með tónlist í bakgrunninum. Animatronicinn er klæddur poncho.
 
-[Kóðinn](./Efni/K%C3%B3%C3%B0i/code_Samsettning/code_Samsettning.ino)
+[Kóðinn](./Efni/K%C3%B3%C3%B0i/Loka%20k%C3%B3%C3%B0i/Loka%20k%C3%B3%C3%B0i.ino)
 
 ### Efni
 ---------
