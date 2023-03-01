@@ -49,6 +49,7 @@ void setup() {
 
 void loop() {
   if (sonar.ping_cm() < 0) {
+    
   }
 
   if (sonar.ping_cm() < distance) {
