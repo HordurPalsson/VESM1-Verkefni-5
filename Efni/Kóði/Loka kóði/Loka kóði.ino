@@ -13,6 +13,7 @@ const int STEFNA_B = 4;
 void afram(int hradi);
 void bakka(int hradi);
 void stoppa();
+TDelay DC_Motorbid(1000) //Bíður í eina sek
 
 void setup() {
   // put your setup code here, to run once:
@@ -24,6 +25,7 @@ void loop() {
 
 // DC mótor
 void afram(int hradi) {
+  if(DC_Motorbid.timilidinn())
     digitalWrite(STEFNA_A, HIGH);
     digitalWrite(STEFNA_B, LOW);
     analogWrite(HRADI, hradi);
