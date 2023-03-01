@@ -1,5 +1,7 @@
 # VESM1 Verkefni 5 
 
+Árni, Davíð, Hörður og Sebastían.
+
 ## Virkni og notkun
 
 [![Foo](./Efni/Myndir/Skull%20Virkni_MYND.jpg)](https://drive.google.com/file/d/1RvkSpu6SGQ47MU8FCnfXZZsG8xI1Pf_O/view?usp=sharing)
