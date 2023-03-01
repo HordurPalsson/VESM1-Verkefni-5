@@ -14,6 +14,9 @@ Myndband af hreyfingu á höfuðkúpu
 [![Foo](./Efni/Myndir/Bukur%20Virkni_MYND.jpg)](https://drive.google.com/file/d/1vM3KPoFO6krJMG9DLv-ZY_mnuQAaxNLZ/view?usp=drivesdk)
 Myndband af hreyfing á búk
 
+[![FOO](./Efni/Myndir/Full%20virkni%20mynd.jpg)](https://drive.google.com/file/d/1KyD6F5YiaVCJs5mMtZPss2azrJYjTHkq/view?usp=share_link)
+
+
 ## Ljósmyndir
  
 ![Mynd af grindinni](./Efni/Myndir/Grind.jpg)
