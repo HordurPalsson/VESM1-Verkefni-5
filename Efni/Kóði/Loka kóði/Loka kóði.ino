@@ -10,10 +10,12 @@
 const int HRADI = 5;  // Verður að vera PWM pinni
 const int STEFNA_A = 2;
 const int STEFNA_B = 4;
+TDelay DC_Motorbid(1000) //Bíður í eina sek
 void afram(int hradi);
 void bakka(int hradi);
 void stoppa();
-TDelay DC_Motorbid(1000) //Bíður í eina sek
+
+//
 
 void setup() {
   // put your setup code here, to run once:
