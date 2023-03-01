@@ -37,7 +37,22 @@ int motor_stefnu_teljari = 0;       // breytan heldur utan um í hvaða stefnu m
 void munnur();                      // fall útfært neðar
 TDelay motor_bid(900);              // bíða í hálfa sekúndu á milli hreyfinga
 
+// Servo 2
+Servo motor_2;
+int servoMotor_pinni = 8;
+
+// svipað og listi í python, geymir stefnurnar sem mótorinn á að fara í og í hvaða röð
+int motor_stefnur2[] = {45,125 }; 
+int motor_stefnu_fjoldi2 = 2; // breytan geymir hversu margar stefnur eru í listanum
+int motor_stefnu_teljari2 = 0; // breytan heldur utan um í hvaða stefnu mótorinn á að benda
+
+TDelay motor_bid2(900); 
+
+
 void setup() {
+  motor.attach(servoMotor_pinni); // segi servo tilvikinu hvaða pinna á að nota
+  motor.write(motor_stefnur2[motor_stefnu_teljari2]); // í þessu tilfelli á mótorinn að byrja í 0°
+  
   // Sensor
   Serial.begin(9600);
   pinMode(TRIG, OUTPUT);
@@ -67,6 +82,7 @@ void loop() {
   // ef fjarlægð í hlut er minna en 50 cm, má ekki vera neikvæð tala.
   if (distance < 50 && distance != 0) {
     // setja sýninguna af stað
+    motor2();
     playSound();
     afram(150);
     mouth();
@@ -136,6 +152,15 @@ void mouth() {
 
 }
 
+void motor2() {
+  if(motor_bid2.timiLidinn()) {
+    // uppfæra stefnu_teljara breytuna, modulus notað til að talan verði
+    // aldrei hærri en fjöldi stefnanna sem eru í listanum
+    motor_stefnu_teljari2 = (motor_stefnu_teljari2 + 1) % motor_stefnu_fjoldi2;
+    // veljum svo rétta stefnu úr listanum
+    motor.write(motor_stefnur2[motor_stefnu_teljari2]);
+  }
+}
 
 
 int fjarlaegd() {
