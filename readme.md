@@ -15,6 +15,13 @@ Grindinn
 
 ## Lýsing, efni, mælingar, höfundar og heimildir
 
+### Lýsing
+
+
+
+
+[Kóðinn](./Efni/K%C3%B3%C3%B0i/code_Samsettning/code_Samsettning.ino)
+
 ### Efni
 ---------
 | FJÖLDI | EFNI|
